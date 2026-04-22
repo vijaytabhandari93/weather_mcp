@@ -12,7 +12,7 @@ import httpx
 from pydantic import BaseModel, Field, field_validator, ConfigDict
 from mcp.server.fastmcp import FastMCP
 
-mcp = FastMCP("weather_mcp")
+mcp = FastMCP("weather_mcp", host="0.0.0.0")
 
 GEOCODING_URL = "https://geocoding-api.open-meteo.com/v1/search"
 WEATHER_URL = "https://api.open-meteo.com/v1/forecast"
