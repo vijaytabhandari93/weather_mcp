@@ -412,4 +412,4 @@ async def weather_get_historical(params: HistoricalInput) -> str:
 
 if __name__ == "__main__":
     port = int(os.getenv("PORT", "8000"))
-    mcp.run(transport="streamable-http", host="0.0.0.0", port=port)
+    mcp.run(transport="streamable-http", port=port)
