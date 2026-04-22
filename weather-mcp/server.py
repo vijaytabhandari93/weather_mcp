@@ -412,6 +412,8 @@ async def weather_get_historical(params: HistoricalInput) -> str:
 
 if __name__ == "__main__":
     import uvicorn
+    from starlette.middleware.trustedhost import TrustedHostMiddleware
     port = int(os.getenv("PORT", "8000"))
     app = mcp.streamable_http_app()
+    app = TrustedHostMiddleware(app, allowed_hosts=["*"])
     uvicorn.run(app, host="0.0.0.0", port=port)
